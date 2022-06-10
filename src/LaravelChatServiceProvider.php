@@ -2,9 +2,9 @@
 
 namespace MichaelNabil230\LaravelChat;
 
+use MichaelNabil230\LaravelChat\Commands\LaravelChatCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use MichaelNabil230\LaravelChat\Commands\LaravelChatCommand;
 
 class LaravelChatServiceProvider extends PackageServiceProvider
 {
