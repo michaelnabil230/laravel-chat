@@ -3,9 +3,9 @@
 namespace MichaelNabil230\LaravelChat\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 use MichaelNabil230\LaravelChat\Models\Message;
 
 class MessageSent extends Notification implements ShouldQueue
@@ -41,14 +41,14 @@ class MessageSent extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        $mail = (new MailMessage)
+        $mail = (new MailMessage())
             ->greeting('Hello!')
             ->subject('You have a new message from ' . $this->message->sender->name)
             ->line('Message: ' . $this->message->body)
             ->line('Thank you for using our application!');
 
         $functionRoute = config('chat.notifyUsersDonstSeen.routeShow');
-        if (!$functionRoute($this->message->chat_id)) {
+        if (! $functionRoute($this->message->chat_id)) {
             $mail->action('View Message', $functionRoute($this->message->chat_id));
         }
 

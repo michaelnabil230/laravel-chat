@@ -3,11 +3,11 @@
 namespace MichaelNabil230\LaravelChat\Observers;
 
 use Illuminate\Support\Facades\Storage;
-use MichaelNabil230\LaravelChat\Models\Message;
-use MichaelNabil230\LaravelChat\Events\Message\Read;
 use MichaelNabil230\LaravelChat\Events\Message\Created;
 use MichaelNabil230\LaravelChat\Events\Message\Deleted;
+use MichaelNabil230\LaravelChat\Events\Message\Read;
 use MichaelNabil230\LaravelChat\Events\Message\Updated;
+use MichaelNabil230\LaravelChat\Models\Message;
 
 class MessageObserver
 {
@@ -48,7 +48,7 @@ class MessageObserver
     public function deleting(Message $message)
     {
         if ($message->from_id == auth()->getKey()()) {
-            if (!is_null($message->attachment)) {
+            if (! is_null($message->attachment)) {
                 if (Storage::exists($message->attachment)) {
                     Storage::delete($message->attachment);
                 }

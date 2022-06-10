@@ -2,9 +2,9 @@
 
 namespace MichaelNabil230\LaravelChat\Observers;
 
-use MichaelNabil230\LaravelChat\Models\Chat;
 use MichaelNabil230\LaravelChat\Events\Chat\Created;
 use MichaelNabil230\LaravelChat\Events\Chat\Deleted;
+use MichaelNabil230\LaravelChat\Models\Chat;
 
 class ChatObserver
 {

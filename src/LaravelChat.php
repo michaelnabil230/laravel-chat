@@ -2,15 +2,15 @@
 
 namespace MichaelNabil230\LaravelChat;
 
-use Illuminate\Http\FileHelpers;
 use Illuminate\Database\Eloquent\Model;
-use MichaelNabil230\LaravelChat\Models\Message;
+use Illuminate\Http\FileHelpers;
 use MichaelNabil230\LaravelChat\Exceptions\MessageArgument;
+use MichaelNabil230\LaravelChat\Models\Message;
 
 class LaravelChat
 {
     use FileHelpers;
-    
+
     protected string $type = 'text';
     protected string $body;
     protected Model $sender;
@@ -75,7 +75,7 @@ class LaravelChat
      */
     public function send(): Message
     {
-        if (!$this->sender) {
+        if (! $this->sender) {
             throw MessageArgument::create('sender');
         }
 
@@ -83,7 +83,7 @@ class LaravelChat
             throw MessageArgument::create('body');
         }
 
-        if (!$this->recipient) {
+        if (! $this->recipient) {
             throw MessageArgument::create('receiver');
         }
 

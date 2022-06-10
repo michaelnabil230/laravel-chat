@@ -2,9 +2,9 @@
 
 namespace MichaelNabil230\LaravelChat\Events\Message;
 
-use MichaelNabil230\LaravelChat\Events\Message as EventMessage;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
+use MichaelNabil230\LaravelChat\Events\Message as EventMessage;
 
 class Updated extends EventMessage implements ShouldBroadcastNow
 {

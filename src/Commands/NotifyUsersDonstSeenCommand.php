@@ -15,7 +15,7 @@ class NotifyUsersDonstSeenCommand extends Command
 
     public function handle(): int
     {
-        $date = new DateTime;
+        $date = new DateTime();
         $date->modify(config('chat.notifyUsersDonstSeen.time', '-1 hour'));
         $formattedDate = $date->format('Y-m-d H:i:s');
 

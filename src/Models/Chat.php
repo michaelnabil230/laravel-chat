@@ -3,15 +3,16 @@
 namespace MichaelNabil230\LaravelChat\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use MichaelNabil230\LaravelChat\Traits\Uuids;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use MichaelNabil230\LaravelChat\Observers\ChatObserver;
+use MichaelNabil230\LaravelChat\Traits\Uuids;
 
 class Chat extends Model
 {
-    use Uuids, SoftDeletes;
+    use Uuids;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

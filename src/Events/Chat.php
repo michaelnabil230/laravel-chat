@@ -2,14 +2,16 @@
 
 namespace MichaelNabil230\LaravelChat\Events;
 
-use MichaelNabil230\LaravelChat\Models\Chat as ChatModel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use MichaelNabil230\LaravelChat\Models\Chat as ChatModel;
 
-class Chat 
+class Chat
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
     public function __construct(protected ChatModel $message)
     {

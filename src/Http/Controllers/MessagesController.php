@@ -2,14 +2,14 @@
 
 namespace MichaelNabil230\LaravelChat\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use MichaelNabil230\LaravelChat\Models\Chat;
 use MichaelNabil230\LaravelChat\Models\Message;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class MessageController
 {
@@ -87,7 +87,7 @@ class MessageController
         $userSender = auth()->user();
         $userReceiver = User::find($request->user_receiver_id);
 
-        if (!$chat) {
+        if (! $chat) {
             $chat = Chat::create([
                 'from_id' => $userSender->getKey(),
                 'to_id' => $userReceiver->getKey(),
