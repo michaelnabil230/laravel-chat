@@ -2,9 +2,9 @@
 
 namespace MichaelNabil230\LaravelChat\Http\Resources\Conversation;
 
+use Illuminate\Http\Resources\Json\JsonResource;
 use MichaelNabil230\LaravelChat\Http\Resources\Message\MessageResource;
 use MichaelNabil230\LaravelChat\Http\Resources\SenderResource;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 class ConversationResource extends JsonResource
 {

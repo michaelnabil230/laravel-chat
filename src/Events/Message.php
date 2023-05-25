@@ -2,15 +2,15 @@
 
 namespace MichaelNabil230\LaravelChat\Events;
 
-use MichaelNabil230\LaravelChat\Http\Resources\Message\MessageResource;
-use MichaelNabil230\LaravelChat\Models\Conversation;
-use MichaelNabil230\LaravelChat\Models\Message as MessageModel;
 use Exception;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use MichaelNabil230\LaravelChat\Http\Resources\Message\MessageResource;
+use MichaelNabil230\LaravelChat\Models\Conversation;
+use MichaelNabil230\LaravelChat\Models\Message as MessageModel;
 
 class Message implements ShouldBroadcast
 {

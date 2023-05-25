@@ -2,11 +2,11 @@
 
 namespace MichaelNabil230\LaravelChat\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use MichaelNabil230\LaravelChat\Events\Message as MessageEvent;
 use MichaelNabil230\LaravelChat\Http\Resources\Conversation\ConversationCollection;
 use MichaelNabil230\LaravelChat\Http\Resources\Message\MessageCollection;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use MichaelNabil230\LaravelChat\Models\Conversation;
 
 class ConversationController
@@ -49,7 +49,7 @@ class ConversationController
     {
         $request->validate([
             'body' => ['required'],
-            'attachments' => ['array']
+            'attachments' => ['array'],
         ]);
 
         $attachments = collect();

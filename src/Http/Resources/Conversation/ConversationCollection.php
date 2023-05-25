@@ -2,8 +2,8 @@
 
 namespace MichaelNabil230\LaravelChat\Http\Resources\Conversation;
 
-use MichaelNabil230\LaravelChat\Http\Resources\PaginationResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use MichaelNabil230\LaravelChat\Http\Resources\PaginationResource;
 
 class ConversationCollection extends ResourceCollection
 {
