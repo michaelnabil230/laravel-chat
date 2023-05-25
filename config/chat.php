@@ -1,6 +1,6 @@
 <?php
 
-// config for MichaelNabil230/LaravelChat
 return [
-
+    'user_one_guard' => 'web',
+    'user_two_guard' => 'web',
 ];
